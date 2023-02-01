@@ -42,7 +42,7 @@ namespace TicTacToe
             board[pos.row, pos.column] = player.ToString();
             player.position = pos;
         }
-        public bool isOutOfBoard( Position pos)
+        public bool isOutOfBoard(Position pos)
         {
             if(pos.row <0 || pos.row >= rows || pos.column < 0 || pos.column >= columns)
             {
