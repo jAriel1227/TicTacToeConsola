@@ -54,9 +54,8 @@ namespace TicTacToe
                             validacion(posision2);
                             columnas = Int32.Parse(posision2);
 
-
                             match.makeMove(new Position(filas, columnas));
-
+                            
                             Console.Clear();
                         }
                         catch (BoardException e)
