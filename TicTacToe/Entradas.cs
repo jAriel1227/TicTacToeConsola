@@ -28,7 +28,7 @@ namespace TicTacToe
             
            
         }
-        public void Entra()
+        public void EntradaDatos()
         {
             while (!match.matchIsFiniched)
             {

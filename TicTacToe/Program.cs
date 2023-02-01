@@ -10,7 +10,7 @@ namespace TicTacToe
             Entradas ent = new Entradas();
 
             //Entradas
-            ent.Entra();
+            ent.EntradaDatos();
         }
     }
 }
