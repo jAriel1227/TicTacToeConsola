@@ -44,6 +44,11 @@ namespace TicTacToe
             board.placePlayerAt(whoIsPlaying(), movePos);
             numberOfPlayLeft--;
             changePlayer();
+
+           /* if (numberOfPlayLeft == 0 && movePos != null)
+            {
+                throw new BoardException("No hay mas posiciones disponibles, el juego a terminado.");
+            }*/
         }
     }
 }

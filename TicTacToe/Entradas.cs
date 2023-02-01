@@ -24,8 +24,7 @@ namespace TicTacToe
             {
                 throw new BoardException("Solo puedes ingresar las posisiones de filas y columnas desdes 0 al 2.");
                
-            }
-            
+            }            
            
         }
         public void EntradaDatos()
