@@ -10,7 +10,7 @@ namespace TicTacToe
     {
         public static void printBoard(Board b)
         {
-            Console.WriteLine("----Bienvenido al juego-----");
+            Console.WriteLine("----Tic Tac Toe X|O-----");
             Console.WriteLine("");
             Console.WriteLine("   ....................");
             Console.WriteLine("C" + "    {0}   |   {1}   |   {2}", b.board[0, 0], b.board[0, 1], b.board[0,2]);

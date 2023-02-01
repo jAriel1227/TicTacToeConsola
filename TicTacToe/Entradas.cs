@@ -33,36 +33,49 @@ namespace TicTacToe
             {
                 try
                 {
-                    Canvas.printBoard(match.board);
-                    Console.WriteLine("Casillas Disponibles: " + match.numberOfPlayLeft);
-                    Console.WriteLine("");
-                    Console.WriteLine("Esperando que juegue el jugador: " + match.whoIsPlaying());
-                    Console.WriteLine("");
-                    Console.WriteLine("Ingrese la fila, para el jugador: " + match.whoIsPlaying());
-                    posision1 = Console.ReadLine();
-                    //llamando el metodo de validacion
-                    validacion(posision1);
-                    filas = Int32.Parse(posision1);                   
-                    
-                    Console.WriteLine("Ingrese la columna, para el jugador: " + match.whoIsPlaying());
-                    posision2 = Console.ReadLine();
-                    //llamando el metodo de validacion
-                    validacion(posision2);
-                    columnas = Int32.Parse(posision2);
-                    
+                    while (!match.matchIsFiniched)
+                    {                    
+                        try
+                        {
+                            Canvas.printBoard(match.board);
+                            Console.WriteLine("Casillas Disponibles: " + match.numberOfPlayLeft);
+                            Console.WriteLine("");
+                            Console.WriteLine("Esperando que juegue el jugador: " + match.whoIsPlaying());
+                            Console.WriteLine("");
+                            Console.WriteLine("Ingrese la fila, para el jugador: " + match.whoIsPlaying());
+                            posision1 = Console.ReadLine();
+                            //llamando el metodo de validacion
+                            validacion(posision1);
+                            filas = Int32.Parse(posision1);
 
-                    match.makeMove(new Position(filas, columnas));                   
+                            Console.WriteLine("Ingrese la columna, para el jugador: " + match.whoIsPlaying());
+                            posision2 = Console.ReadLine();
+                            //llamando el metodo de validacion
+                            validacion(posision2);
+                            columnas = Int32.Parse(posision2);
 
-                    Console.Clear();
+
+                            match.makeMove(new Position(filas, columnas));
+
+                            Console.Clear();
+                        }
+                        catch (BoardException e)
+                        {
+                            Console.WriteLine(e.Message);
+                            Console.WriteLine();
+                            Console.WriteLine("Presiona cualquier tecla para que vuleva a Jugar...");
+                            Console.ReadLine();
+
+                        }
+                        Console.Clear();
+                    }
                 }
-                catch (BoardException e)
+                catch(BoardException e)
                 {
                     Console.WriteLine(e.Message);
-                    Console.WriteLine();
-                    Console.WriteLine("Presiona cualquier tecla para que vuleva a Jugar...");
                     Console.ReadLine();
-                    Console.Clear();
                 }
+                Console.Clear();
             }
         }
     }
