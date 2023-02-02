@@ -53,8 +53,9 @@ namespace TicTacToe
             {
                   if (board.boardPos(i, 0) != null && board.board[i, 0] == board.board[i, 1] && board.board[i, 1] == board.board[i, 2])
                   {
-                      Console.WriteLine("Ha ganado el jugador:" + board.board[i, 0]);
-                      Console.Read();
+                      Console.WriteLine("Ha ganado el jugador: " + board.board[i, 0]);
+                      Console.WriteLine();
+                      Console.Read();                    
                       matchIsFiniched = true;
                   } 
             }
@@ -64,7 +65,8 @@ namespace TicTacToe
                 
                   if (board.boardPos(0, i) != null && board.board[0, i] == board.board[1, i] && board.board[1, i] == board.board[2, i])
                   {
-                     Console.WriteLine("Ha ganado el jugador:" + board.board[0, i]);
+                     Console.WriteLine("Ha ganado el jugador: " + board.board[0, i]);
+                     Console.WriteLine();
                      Console.Read();
                      matchIsFiniched = true;
                   }
@@ -76,7 +78,8 @@ namespace TicTacToe
             {
                 if (board.board[0, 0] == board.board[1, 1] && board.board[1, 1] == board.board[2, 2])
                 {
-                    Console.WriteLine("Ha ganado el jugador:" + board.board[0, 0]);
+                    Console.WriteLine("Ha ganado el jugador: " + board.board[0, 0]);
+                    Console.WriteLine();
                     Console.Read();
                     matchIsFiniched = true;
                 }
@@ -87,17 +90,18 @@ namespace TicTacToe
             {
                 if (board.board[0, 2] == board.board[1, 1] && board.board[1, 1] == board.board[2, 0])
                 {
-                    Console.WriteLine("Ha ganado el jugador:" + board.board[0, 2]);
+                    Console.WriteLine("Ha ganado el jugador: " + board.board[0, 2]);
+                    Console.WriteLine();
                     Console.Read();
                     matchIsFiniched = true;
                 }
             }            
             if(numberOfPlayLeft == 0)
             {
-                Console.WriteLine("Empate");
+                Console.WriteLine("El juego esta empatado. Inicia nuevamente otra partida.");
+                Console.WriteLine();
                 matchIsFiniched = true;
             }
-
         }
     }
 }
