@@ -49,42 +49,49 @@ namespace TicTacToe
         public void checkWinner()
         {
             //Validacion de forma horizontal
-            //Validacion de forma horizontal
             for (int i = 0; i < 3; i++)
             {
-                if (board.board[i, 0] != null && board.board[i, 0] == board.board[i, 1] && board.board[i, 1] == board.board[i, 2])
-                {
-                    Console.WriteLine("Ha ganado el jugador:" + board.board[i, 0]);
-                    Console.Read();
-                    matchIsFiniched = true;
-                }
+                  if (board.boardPos(i, 0) != null && board.board[i, 0] == board.board[i, 1] && board.board[i, 1] == board.board[i, 2])
+                  {
+                      Console.WriteLine("Ha ganado el jugador:" + board.board[i, 0]);
+                      Console.Read();
+                      matchIsFiniched = true;
+                  } 
             }
             //Validacion de forma vertical
             for (int i = 0; i < 3; i++)
-            {
-                if (board.board[0, i] != null && board.board[0, i] == board.board[1, i] && board.board[1, i] == board.board[2, i])
-                {
-                    Console.WriteLine("Ha ganado el jugador:" + board.board[0, i]);
-                    Console.Read();
-                    matchIsFiniched = true;
-                }
+            {               
+                
+                  if (board.boardPos(0, i) != null && board.board[0, i] == board.board[1, i] && board.board[1, i] == board.board[2, i])
+                  {
+                     Console.WriteLine("Ha ganado el jugador:" + board.board[0, i]);
+                     Console.Read();
+                     matchIsFiniched = true;
+                  }
+                               
             }
             //Validacion Diagonal  
             //Izquierda a derecha
-            if (board.board[0, 0] != null && board.board[0, 0] == board.board[1, 1] && board.board[1, 1] == board.board[2, 2])
+            if(board.boardPos(0, 0) != null)
             {
-                Console.WriteLine("Ha ganado el jugador:" + board.board[0, 0]);
-                Console.Read();
-                matchIsFiniched = true;
-            }
+                if (board.board[0, 0] == board.board[1, 1] && board.board[1, 1] == board.board[2, 2])
+                {
+                    Console.WriteLine("Ha ganado el jugador:" + board.board[0, 0]);
+                    Console.Read();
+                    matchIsFiniched = true;
+                }
+            }           
 
             //Derecha a Izquierda
-            if (board.board[0, 2] != null && board.board[0, 2] == board.board[1, 1] && board.board[1, 1] == board.board[2, 0])
+            if(board.boardPos(0, 2) != null)
             {
-                Console.WriteLine("Ha ganado el jugador:" + board.board[0, 2]);
-                Console.Read();
-                matchIsFiniched = true;
-            }
+                if (board.board[0, 2] == board.board[1, 1] && board.board[1, 1] == board.board[2, 0])
+                {
+                    Console.WriteLine("Ha ganado el jugador:" + board.board[0, 2]);
+                    Console.Read();
+                    matchIsFiniched = true;
+                }
+            }            
             if(numberOfPlayLeft == 0)
             {
                 Console.WriteLine("Empate");
